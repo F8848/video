@@ -28,14 +28,28 @@ export default function VideoList() {
         videos.length > 0 ? (
           <ul className="space-y-8 sm:space-y-12 w-full max-w-full sm:max-w-4xl">
             {videos.map((video) => (
-              <li key={video} className="border rounded-xl p-8 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-12 bg-white/90 shadow-lg">
-                <video
-                  className="rounded-2xl shadow w-full sm:w-[600px] h-auto max-w-full"
-                  controls
-                  src={`/videos/${video}`}
-                  style={{ aspectRatio: '16/9' }}
-                />
-                <span className="truncate text-lg sm:text-2xl font-semibold w-full text-center sm:text-left">{video}</span>
+              <li key={video} className="flex items-center justify-center p-0 sm:p-0 rounded-2xl overflow-hidden border-0">
+                <div className="relative w-full sm:w-[600px] aspect-video flex items-center justify-center">
+                  {/* 背景虚化视频 */}
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover blur-sm scale-110 opacity-60 z-0"
+                    src={`/videos/${video}`}
+                    aria-hidden="true"
+                    tabIndex={-1}
+                    autoPlay
+                    loop
+                    muted
+                  />
+                  {/* 前景主视频 */}
+                  <div className="relative z-10 w-full h-full flex items-center justify-center border border-gray-300 rounded-2xl shadow-inner overflow-hidden">
+                    <video
+                      className="w-full h-auto block rounded-2xl bg-black"
+                      controls
+                      src={`/videos/${video}`}
+                      style={{ aspectRatio: '16/9' }}
+                    />
+                  </div>
+                </div>
               </li>
             ))}
           </ul>

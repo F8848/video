@@ -13,6 +13,16 @@ pnpm dev
 # or
 bun dev
 ```
+```bash
+上传服务器启动运行访问
+克隆Git项目: git clone https://github.com/F8848/video.git
+
+进入项目目录：cd repository
+
+安装Git： sudo apt update
+
+安装项目依赖：npm install
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

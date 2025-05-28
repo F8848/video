@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+启动项目
 npm run dev
 # or
 yarn dev
@@ -14,7 +15,7 @@ pnpm dev
 bun dev
 ```
 ```bash
-上传服务器启动运行访问
+上传服务器启动步骤
 克隆Git项目: git clone https://github.com/F8848/video.git
 
 进入项目目录：cd repository
